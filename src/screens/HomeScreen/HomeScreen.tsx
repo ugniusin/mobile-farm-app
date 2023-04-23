@@ -1,8 +1,8 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FeedScreen from './FeedScreen/MainScreen';
-import MapScreen from './MapScreen';
-import ChatScreen from './ChatScreen';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import FeedScreen from "./FeedScreen/MainScreen";
+import MapScreen from "./MapScreen";
+import ChatScreen from "./ChatScreen";
 
 const Tab = createBottomTabNavigator();
 

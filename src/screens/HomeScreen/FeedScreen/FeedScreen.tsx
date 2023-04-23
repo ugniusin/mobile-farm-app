@@ -1,7 +1,7 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import MainScreen from './MainScreen';
-import ProductScreen from './ProductScreen';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import MainScreen from "./MainScreen";
+import ProductScreen from "./ProductScreen";
 
 const Stack = createStackNavigator();
 
@@ -10,7 +10,7 @@ const FeedScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        presentation: 'card',
+        presentation: "card",
         cardStyle: {},
         cardOverlayEnabled: true,
         animationEnabled: false,

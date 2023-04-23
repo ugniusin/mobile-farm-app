@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import RightDrawerScreen from './src/screens/RightDrawerScreen';
-import { StatusBar } from 'expo-status-bar';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import RightDrawerScreen from "./src/screens/RightDrawerScreen";
+import { StatusBar } from "expo-status-bar";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <NavigationContainer>
         <RightDrawerScreen />
       </NavigationContainer>
-      <StatusBar style='auto' />
+      <StatusBar style="auto" />
     </>
   );
 };

@@ -1,6 +1,12 @@
-import React from 'react';
-import { Button, StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React from "react";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const Header = ({ navigation }: any) => {
   return (
@@ -22,27 +28,27 @@ const Header = ({ navigation }: any) => {
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    backgroundColor: '#fff',
-  },
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 50,
+    alignItems: "center",
+    borderBottomColor: "#ddd",
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    flexDirection: "row",
+    height: 50,
+    justifyContent: "space-between",
     paddingHorizontal: 10,
+  },
+  icon: {
+    color: "#000",
+    paddingHorizontal: 10,
+  },
+  safeArea: {
+    backgroundColor: "#fff",
   },
   searchBar: {
     flex: 1,
-    marginLeft: 10,
     fontSize: 18,
-    fontWeight: 'bold',
-  },
-  icon: {
-    color: '#000',
-    paddingHorizontal: 10,
+    fontWeight: "bold",
+    marginLeft: 10,
   },
 });
 

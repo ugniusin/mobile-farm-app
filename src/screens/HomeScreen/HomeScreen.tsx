@@ -1,18 +1,23 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FeedScreen from './FeedScreen/MainScreen';
-import ProfileScreen from './ProfileScreen';
+import MapScreen from './MapScreen';
+import ChatScreen from './ChatScreen';
 
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Tab.Screen name="Feed" component={FeedScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Map" component={MapScreen} />
+      <Tab.Screen name="Chat" component={ChatScreen} />
     </Tab.Navigator>
   );
 };
-
 
 export default HomeScreen;

@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-const ProductScreen = ({ navigation, route }: any) => {
+const MapScreen = ({ navigation }: any) => {
   return (
     <View>
-      <Text>Product Screen</Text>
-      <Text>Param from Home Screen: {route.params.paramName}</Text>
+      <Text>Map Screen</Text>
       <Button title="Go Back" onPress={() => navigation.goBack()} />
     </View>
   );
 };
 
-export default ProductScreen;
+export default MapScreen;

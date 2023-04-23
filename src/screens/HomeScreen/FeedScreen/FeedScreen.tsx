@@ -10,10 +10,10 @@ const FeedScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        presentation: "card",
-        cardStyle: {},
+        presentation: "modal",
+        //cardStyle: {},
         cardOverlayEnabled: true,
-        animationEnabled: false,
+        //animationEnabled: false,
       }}
     >
       <Stack.Screen name="Main" component={MainScreen} />

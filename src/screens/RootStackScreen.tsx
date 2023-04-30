@@ -1,10 +1,11 @@
 import React from "react";
 import RightDrawerScreen from "./RightDrawerScreen";
-import ModalScreen from "./ModalScreen";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createSharedElementStackNavigator } from "react-navigation-shared-element";
+import ProductScreen from "./HomeScreen/FeedScreen/ProductScreen";
 import { Animated } from "react-native";
+import ModalScreen from "./ModalScreen";
 
-const RootStack = createStackNavigator();
+const RootStack = createSharedElementStackNavigator();
 
 const forSlide = ({ current, next, inverted, layouts: { screen } }: any) => {
   const progress = Animated.add(
@@ -44,18 +45,18 @@ const forSlide = ({ current, next, inverted, layouts: { screen } }: any) => {
   };
 };
 
+
 const RootStackScreen = () => {
   return (
     <RootStack.Navigator
       screenOptions={{
         headerShown: false,
-        animationTypeForReplace: "pop",
       }}
     >
       <RootStack.Screen
         name="RightDrawer"
         component={RightDrawerScreen}
-        options={{ headerShown: false }}
+        options={({ navigation }) => ({ headerShown: false, navigation })}
       />
       <RootStack.Screen
         name="MyModal"
@@ -65,6 +66,20 @@ const RootStackScreen = () => {
           gestureDirection: "vertical",
           cardStyleInterpolator: forSlide,
         }}
+      />
+      <RootStack.Screen
+        name="Product"
+        component={ProductScreen}
+        options={() => ({
+          headerBackTitleVisible: false,
+          cardStyleInterpolator: ({ current: { progress } }: any) => {
+            return {
+              cardStyle: {
+                opacity: progress,
+              },
+            };
+          },
+        })}
       />
     </RootStack.Navigator>
   );

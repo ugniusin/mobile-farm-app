@@ -1,5 +1,12 @@
 import React from "react";
-import { Text, View, ScrollView, Image, Dimensions } from "react-native";
+import {
+  Text,
+  View,
+  ScrollView,
+  Image,
+  Dimensions,
+  StyleSheet,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { SharedElement } from "react-navigation-shared-element";
 
@@ -10,27 +17,19 @@ const ProductScreen = ({ navigation, route }: any) => {
   const { item } = route.params;
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.productContainer}>
       <ScrollView>
         <SharedElement id={`item.${item.id}.image_url`}>
           <Image
             source={{ uri: item.image_url }}
-            style={{
-              width: "100%",
-              height: ITEM_HEIGHT,
-            }}
-            resizeMode="cover"
+            style={styles.imageStack}
+            //resizeMode="cover"
           />
         </SharedElement>
         <MaterialCommunityIcons
           name="close"
           size={28}
-          style={{
-            position: "absolute",
-            top: 40,
-            right: 20,
-            zIndex: 2,
-          }}
+          style={styles.closeIcon}
           onPress={() => {
             navigation.goBack();
           }}
@@ -40,33 +39,15 @@ const ProductScreen = ({ navigation, route }: any) => {
         >
           <View style={{ flexDirection: "column", paddingLeft: 6 }}>
             <SharedElement id={`item.${item.id}.title`}>
-              <Text
-                style={{
-                  color: "#ccc",
-                  fontSize: 24,
-                  fontWeight: "bold",
-                  lineHeight: 28,
-                }}
-              >
-                {item.title}
-              </Text>
+              <Text style={styles.title}>{item.title}</Text>
             </SharedElement>
             <SharedElement id={`item.${item.id}.description`}>
-              <Text
-                style={{
-                  color: "#ccc",
-                  fontSize: 16,
-                  fontWeight: "bold",
-                  lineHeight: 18,
-                }}
-              >
-                {item.description}
-              </Text>
+              <Text style={styles.description}>{item.location}</Text>
             </SharedElement>
           </View>
         </View>
 
-        <View style={{ margin: 20 }}>
+        <View style={styles.content}>
           <Text
             style={{
               fontSize: 18,
@@ -125,5 +106,36 @@ ProductScreen.sharedElements = (route: any) => {
     },
   ];
 };
+
+const styles = StyleSheet.create({
+  closeIcon: {
+    position: "absolute",
+    right: 20,
+    top: 40,
+    zIndex: 2,
+  },
+  content: {
+    margin: 20,
+  },
+  description: {
+    color: "#ccc",
+    fontSize: 16,
+    fontWeight: "bold",
+    lineHeight: 18,
+  },
+  imageStack: {
+    height: ITEM_HEIGHT,
+    width: "100%",
+  },
+  productContainer: {
+    flex: 1,
+  },
+  title: {
+    color: "#ccc",
+    fontSize: 24,
+    fontWeight: "bold",
+    lineHeight: 28,
+  },
+});
 
 export default ProductScreen;

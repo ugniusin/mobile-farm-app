@@ -1,9 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FeedScreen from "./FeedScreen/FeedStackScreen";
 import MapScreen from "./MapScreen";
 import ChatScreen from "./ChatScreen";
 import { Ionicons } from "@expo/vector-icons";
+import FeedStackScreen from "./FeedScreen/FeedStackScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,8 +28,8 @@ const HomeTabScreen = () => {
       }}
     >
       <Tab.Screen
-        name="Feed"
-        component={FeedScreen}
+        name="FeedStack"
+        component={FeedStackScreen}
         options={{
           tabBarIcon: (props) => FeedIcon({ ...props }),
         }}

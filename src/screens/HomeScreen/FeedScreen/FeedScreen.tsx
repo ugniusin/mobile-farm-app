@@ -16,7 +16,7 @@ const { width } = Dimensions.get("screen");
 const ITEM_WIDTH = width * 0.9;
 const ITEM_HEIGHT = ITEM_WIDTH * 0.9;
 
-const MainScreen = ({ navigation }: any) => {
+const FeedScreen = ({ navigation }: any) => {
   return (
     <View style={{ flex: 1, marginHorizontal: 20 }}>
       <ScrollView
@@ -70,7 +70,7 @@ const MainScreen = ({ navigation }: any) => {
                           lineHeight: 18,
                         }}
                       >
-                        {item.description}
+                        {item.location}
                       </Text>
                     </SharedElement>
                   </View>
@@ -84,4 +84,4 @@ const MainScreen = ({ navigation }: any) => {
   );
 };
 
-export default MainScreen;
+export default FeedScreen;

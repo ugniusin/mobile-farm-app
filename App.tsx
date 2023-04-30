@@ -1,13 +1,13 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import RightDrawerScreen from "./src/screens/RightDrawerScreen";
 import { StatusBar } from "expo-status-bar";
+import RootStackScreen from "./src/screens/RootStackScreen";
 
 const App = () => {
   return (
     <>
       <NavigationContainer>
-        <RightDrawerScreen />
+        <RootStackScreen />
       </NavigationContainer>
       <StatusBar style="auto" />
     </>

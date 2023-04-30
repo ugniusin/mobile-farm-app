@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FeedScreen from "./FeedScreen/FeedScreen";
+import FeedScreen from "./FeedScreen/FeedStackScreen";
 import MapScreen from "./MapScreen";
 import ChatScreen from "./ChatScreen";
 import { Ionicons } from "@expo/vector-icons";
@@ -19,7 +19,7 @@ const ChatIcon = ({ color, size }: any) => (
   <Ionicons name="chatbox-outline" size={size} style={{ color: color }} />
 );
 
-const HomeScreen = () => {
+const HomeTabScreen = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -31,25 +31,25 @@ const HomeScreen = () => {
         name="Feed"
         component={FeedScreen}
         options={{
-          tabBarIcon: ({ color, size }) => FeedIcon({ color, size }),
+          tabBarIcon: (props) => FeedIcon({ ...props }),
         }}
       />
       <Tab.Screen
         name="Map"
         component={MapScreen}
         options={{
-          tabBarIcon: ({ color, size }) => MapIcon({ color, size }),
+          tabBarIcon: (props) => MapIcon({ ...props }),
         }}
       />
       <Tab.Screen
         name="Chat"
         component={ChatScreen}
         options={{
-          tabBarIcon: ({ color, size }) => ChatIcon({ color, size }),
+          tabBarIcon: (props) => ChatIcon({ ...props }),
         }}
       />
     </Tab.Navigator>
   );
 };
 
-export default HomeScreen;
+export default HomeTabScreen;

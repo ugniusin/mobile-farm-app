@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import HomeScreen from "./HomeScreen/HomeScreen";
 import Header from "../components/Header";
+import HomeTabScreen from "./HomeScreen/HomeTabScreen";
 
 const LeftDrawer = createDrawerNavigator();
 
@@ -13,7 +13,7 @@ const LeftDrawerScreen = () => {
         header: Header,
       }}
     >
-      <LeftDrawer.Screen name="Home" component={HomeScreen} />
+      <LeftDrawer.Screen name="Home" component={HomeTabScreen} />
     </LeftDrawer.Navigator>
   );
 };
